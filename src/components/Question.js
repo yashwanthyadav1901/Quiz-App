@@ -1,13 +1,17 @@
 import React from "react";
 import Options from "./Options";
+import NextButton from "./NextButton";
 
-const Question = ({ question }) => {
+const Question = ({ question, dispatch, answer }) => {
   console.log(question);
   return (
-    <div>
-      <h4>{question.question}</h4>
-      <Options question={question} />
-    </div>
+    <>
+      <div>
+        <h4>{question.question}</h4>
+        <Options question={question} dispatch={dispatch} answer={answer} />
+      </div>
+      <NextButton dispatch={dispatch} answer={answer} />
+    </>
   );
 };
 
